@@ -12,6 +12,23 @@
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-cog text-success"></i>
+        <p>
+          Master Data
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{ route('user.index') }}" class="nav-link">
+            <i class="fa fa-users nav-icon text-info"></i>
+            <p>Data Pengguna</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">
         <i class="nav-icon fas fa-arrow-right text-danger"></i>
         <p>Menu - 01</p>
       </a>
