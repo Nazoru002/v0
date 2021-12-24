@@ -24,6 +24,7 @@
         <tr>
           <th class="text-center" width="5%">No.</th>
           <th>Nama Hak Akses</th>
+          <th class="text-center" width="10%">Level</th>
           <th class="text-center" width="15%">Status</th>
           <th class="text-center" width="10%">Aksi</th>
         </tr>
@@ -33,6 +34,7 @@
           <tr>
             <td class="align-middle text-center">{{ ($roles->currentpage()-1) * $roles->perpage() + $loop->index + 1 }}.</td>
             <td class="align-middle">{{ $item->name }}</td>
+            <td class="align-middle text-center">{{ $item->level }}</td>
             <td class="align-middle text-center">
               @if ($item->is_active)
                 <span class="btn btn-sm btn-success btn-block">

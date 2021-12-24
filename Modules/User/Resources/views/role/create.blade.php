@@ -22,6 +22,20 @@
           </span>
         </div>
       </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label for="">Tingkat Level : </label>
+          <input type="number" name="level" id="level" class="form-control {{ $errors->has('level') ? 'is-invalid':'' }}" placeholder="1" min="1" max="9" pattern="/d*" step="1" value="{{ old('level') ?? '1' }}" required>
+          <span class="invalid-feedback">
+            {{ $errors->first('level') }}
+          </span>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <span class="text-sm">
+          *Semakin Kecil Angka Semakin Tinggi Tingkat Hak Akses.
+        </span>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-4 col-md-2">

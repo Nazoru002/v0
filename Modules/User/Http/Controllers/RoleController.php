@@ -37,12 +37,14 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|unique:roles,name'
+            'name' => 'required|string|unique:roles,name',
+            'level' => 'required|numeric|min:1|max:9'
         ]);
 
         DB::beginTransaction();
         $createRole = Role::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'level' => $request->level
         ]);
 
         if (!$createRole) {
@@ -86,10 +88,12 @@ class RoleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|unique:roles,name,'.$role->id,
+            'level' => 'required|numeric|min:1|max:9'
         ]);
 
         $updateRole = $role->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'level' => $request->level
         ]);
 
         session()->flash('info', 'Data berhasil di-Ubah !');
