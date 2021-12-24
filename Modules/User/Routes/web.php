@@ -12,3 +12,7 @@
 */
 
 Route::resource('user', 'UserController');
+
+
+Route::resource('roles', 'RoleController');
+Route::put('roles/active/{role}', 'RoleController@active')->name('roles.active');

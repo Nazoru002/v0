@@ -5,6 +5,9 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('assets') }}/dist/css/adminlte.min.css">
 
+<!-- Toastr -->
+<link rel="stylesheet" href="{{ asset('assets') }}/plugins/toastr/toastr.min.css">
+  
 <style>
   .borad {
     border-radius: 0px !important;

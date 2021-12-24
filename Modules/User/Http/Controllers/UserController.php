@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get(); 
-        return view('user::index', compact('users'));
+        return view('user::user.index', compact('users'));
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user::create');
+        return view('user::user.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('user::show');
+        return view('user::user.show');
     }
 
     /**
@@ -93,7 +93,8 @@ class UserController extends Controller
 
             return redirect(route('user.index'));
         } catch (\Exception $e) {
-            dd($e);
+            session()->flash('error', 'Terjadi Kesalahan !');
+            return redirect(route('user.index'));
         }
     }
 
