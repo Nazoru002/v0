@@ -65,7 +65,7 @@
         </table>
       </div>
     </div>
-    <div class="card">
+    <div class="card-footer">
       <div class="row m-0 p-0 ">
         <div class="col-md-6 align-midle">
           <x-button-info times="1" edit="1" undo="1"></x-button-info>
