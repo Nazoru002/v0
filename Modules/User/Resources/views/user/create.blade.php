@@ -38,6 +38,16 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-7">
+                <div class="form-group">
+                  <label for="">Hak Akses Pengguna : </label>
+                  <select class="select2" multiple="multiple" name="roles[]" id="roles" data-placeholder="Pilih Hak Akses Pengguna..." style="width: 100%;" required>
+                    @foreach ($roles as $item)
+                      <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-12">
@@ -111,4 +121,12 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+  $(document).ready(function() {
+    $('.select2').select2();
+  });
+</script>
 @endsection

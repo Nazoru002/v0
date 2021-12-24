@@ -7,6 +7,10 @@
 
 <!-- Toastr -->
 <link rel="stylesheet" href="{{ asset('assets') }}/plugins/toastr/toastr.min.css">
+
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ asset('assets') }}/plugins/select2/css/select2.min.css">
+
   
 <style>
   .borad {
@@ -27,6 +31,13 @@
   .input-group:not(.has-validation)>.form-control:not(:last-child) {
     border-top-right-radius: 4px !important;
     border-bottom-right-radius: 4px !important;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #2a2a2a !important;
+    border: 1px solid #aaa !important;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 </style>
 

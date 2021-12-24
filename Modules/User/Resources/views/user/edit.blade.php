@@ -19,13 +19,11 @@
         @csrf
         @method('PUT')
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-6">
             <h5>Data Diri & Akun Pengguna : </h5>
             <hr class="hr-title">
-          </div>
-          <div class="col-12 px-3">
-            <div class="row">
-              <div class="col-md-5">
+            <div class="row px-3">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="name">Nama Pengguna : </label>
                   <div class="input-group">
@@ -39,7 +37,23 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">Hak Akses Pengguna : </label>
+                  <select class="select2" multiple="multiple" name="roles[]" id="roles" data-placeholder="Pilih Hak Akses Pengguna..." style="width: 100%;" required>
+                    @foreach ($roles as $item)
+                      <option value="{{ $item->id }}" {{ in_array($item->id, $user_roles) ? 'selected':'' }}>{{ $item->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Akun Login Pengguna : </h5>
+            <hr class="hr-title">
+            <div class="row px-3">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="email">E-Mail Pengguna : </label>
                   <div class="input-group">
@@ -54,14 +68,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 pt-2">
             <h6>Ubah Password Pengguna : </h6>
             <hr class="hr-title">
-          </div>
-          <div class="col-12 px-3">
-            <div class="row">
-              <div class="col-md-6">
+            <div class="row px-3">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="password">Password Pengguna : </label>
                   <div class="input-group">
@@ -110,4 +120,12 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+  $(document).ready(function() {
+    $('.select2').select2();
+  });
+</script>
 @endsection

@@ -22,16 +22,25 @@
               <th class="text-center" width="10%">No.</th>
               <th>Nama</th>
               <th>E-Mail</th>
-              <th class="text-center">Aksi</th>
+              <th>Hak Akses</th>
+              <th width="10%" class="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>
             @forelse ($users as $item)
               <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->email }}</td>
-                <td class="text-center">
+                <td class="align-middle text-center">{{ ($users->currentpage()-1) * $users->perpage() + $loop->index + 1 }}.</td>
+
+                <td class="align-middle">{{ $item->name }}</td>
+                <td class="align-middle">{{ $item->email }}</td>
+                <td class="align-middle">
+                  @foreach ($item->roles as $item2)
+                    <span class="btn btn-sm btn-outline-success">
+                      {{ $item2->name }}
+                    </span>
+                  @endforeach
+                </td>
+                <td class="align-middle text-center">
                   <div class="btn-group">
                     <a href="{{ route('user.edit', $item->id) }}" class="btn btn-info btn-sm borad">
                       <span class="fa fa-edit"></span>
@@ -54,6 +63,18 @@
             @endforelse
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row m-0 p-0 ">
+        <div class="col-md-6 align-midle">
+          <x-button-info times="1" edit="1" undo="1"></x-button-info>
+        </div>
+        <div class="col-md-6">
+          <div class="float-right">
+            {{ $users->links() }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
