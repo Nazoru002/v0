@@ -5,7 +5,7 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ asset('assets') }}/index3.html" class="nav-link">Sistem Aplikasi {{ env('APP_NAME') }} - v0.0.1</a>
+      <a href="{{ route('backend.main') }}" class="nav-link">Sistem Aplikasi {{ env('APP_NAME') }} - v0.0.1</a>
     </li>
   </ul>
 

@@ -22,6 +22,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::prefix('backend')->name('backend.')->group(function () {
+Route::middleware('auth:sanctum')->prefix('backend')->name('backend.')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('main');
 });

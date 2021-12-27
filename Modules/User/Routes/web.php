@@ -11,8 +11,9 @@
 |
 */
 
-Route::resource('user', 'UserController');
+Route::middleware(['auth:sanctum'])->group(function () {
+  Route::resource('user', 'UserController');
+  Route::resource('roles', 'RoleController');
+  Route::put('roles/active/{role}', 'RoleController@active')->name('roles.active');
+});
 
-
-Route::resource('roles', 'RoleController');
-Route::put('roles/active/{role}', 'RoleController@active')->name('roles.active');
