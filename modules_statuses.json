@@ -1,5 +1,7 @@
 {
     "User": true,
     "Controller": true,
-    "RoleController": true
+    "RoleController": true,
+    "Game": true,
+    "Product": true
 }

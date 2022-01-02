@@ -31,6 +31,18 @@
             <p>Level Pengguna</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('game.index') }}" class="nav-link">
+            <i class="fa fa-users nav-icon text-info"></i>
+            <p>Data Game</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('product.index') }}" class="nav-link">
+            <i class="fa fa-users nav-icon text-info"></i>
+            <p>Data Produk</p>
+          </a>
+        </li>
       </ul>
     </li>
     <li class="nav-item">
